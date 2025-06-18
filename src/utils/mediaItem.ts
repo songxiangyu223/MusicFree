@@ -8,12 +8,12 @@ import MediaMeta from '@/core/mediaExtra';
 import {produce} from 'immer';
 import objectPath from 'object-path';
 
-/** 获取mediakey */
+/** 获取媒体键值 */
 export function getMediaKey(mediaItem: ICommon.IMediaBase) {
     return `${mediaItem.platform}@${mediaItem.id}`;
 }
 
-/** 解析mediakey */
+/** 解析媒体键值 */
 export function parseMediaKey(key: string): ICommon.IMediaBase {
     try {
         const str = JSON.parse(key.trim());
@@ -36,7 +36,7 @@ export function parseMediaKey(key: string): ICommon.IMediaBase {
     }
 }
 
-/** 比较两media是否相同 */
+/** 比较两个媒体项是否相同 */
 export function isSameMediaItem(
     a: ICommon.IMediaBase | null | undefined,
     b: ICommon.IMediaBase | null | undefined,
@@ -45,7 +45,7 @@ export function isSameMediaItem(
     return a && b && a.id == b.id && a.platform === b.platform;
 }
 
-/** 查找是否存在 */
+/** 查找是否存在媒体项 */
 export function includesMedia(
     a: ICommon.IMediaBase[] | null | undefined,
     b: ICommon.IMediaBase | null | undefined,
@@ -56,7 +56,7 @@ export function includesMedia(
     return a.findIndex(_ => isSameMediaItem(_, b)) !== -1;
 }
 
-/** 获取复位的mediaItem */
+/** 获取重置的媒体项 */
 export function resetMediaItem<T extends Partial<ICommon.IMediaBase>>(
     mediaItem: T,
     platform?: string,
