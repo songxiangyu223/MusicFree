@@ -49,7 +49,7 @@ export default function AssociateLrc(props: INewMusicSheetProps) {
                                         Toast.warn(
                                             '地址失效了，重新复制一下吧~',
                                         );
-                                        // TODO: ERROR CODE
+                                        // 待做：错误代码
                                         throw new Error('CLIPBOARD TIMEOUT');
                                     }
                                     await associateLrc(musicItem, {

@@ -32,7 +32,7 @@ export default function ArtistResultItem(props: IArtistResultsProps) {
                         ? artistItem.desc
                         : `${
                               artistItem.worksNum
-                                  ? artistItem.worksNum + '个作品' // TODO 用字符串模板函数更好
+                                  ? artistItem.worksNum + '个作品' // 待做：用字符串模板函数更好
                                   : ''
                           }    ${artistItem.description ?? ''}`
                 }

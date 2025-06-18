@@ -165,7 +165,7 @@ export class Plugin {
                     env,
                 }
 
-                // eslint-disable-next-line no-new-func
+                // 禁用ESLint规则：使用new Function构造函数
                 _instance = Function(`
                     'use strict';
                     return function(require, __musicfree_require, module, exports, console, env, URL, process) {
@@ -513,7 +513,7 @@ class PluginMethods implements IPlugin.IPluginInstanceMethods {
 
             return {
                 rawLrc,
-                translation: translation || undefined, // TODO: 这里写的不好
+                translation: translation || undefined, // 待做：这里写的不好
             };
         }
 

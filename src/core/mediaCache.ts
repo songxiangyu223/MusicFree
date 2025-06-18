@@ -29,7 +29,7 @@ const setMediaCache = (mediaItem: ICommon.IMediaBase) => {
     if (mediaItem.platform && mediaItem.id) {
         const allKeys = mediaCacheStore.getAllKeys();
         if (allKeys.length >= maxCacheCount) {
-            // TODO: 随机删一半
+            // 待做：随机删一半
             for (let i = 0; i < maxCacheCount / 2; ++i) {
                 const rawCacheMedia = mediaCacheStore.getString(allKeys[i]);
                 const cacheData = rawCacheMedia
