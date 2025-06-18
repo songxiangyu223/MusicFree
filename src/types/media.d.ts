@@ -1,22 +1,22 @@
 declare namespace IMedia {
     export interface ICommentItem {
         id?: string;
-        // 用户名
+        // Username
         nickName: string;
-        // 头像
+        // Avatar
         avatar?: string;
-        // 评论内容
+        // Comment content
         comment: string;
-        // 点赞数
+        // Number of likes
         like?: number;
-        // 评论时间
+        // Comment creation time
         createAt?: number;
-        // 地址
+        // Location
         location?: string;
     }
 
     export interface IComment extends ICommentItem {
-        // 回复
+        // Replies
         replies?: IComment[];
     }
 }
