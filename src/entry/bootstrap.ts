@@ -35,7 +35,7 @@ async function _bootstrap() {
                 `SplashScreen.preventAutoHideAsync() succeeded: ${result}`,
             ),
         )
-        .catch(console.warn); // it's good to explicitly catch and inspect any error
+        .catch(console.warn); // 显式地捕获和检查任何错误是一个好习惯
     const logger = perfLogger();
     // 1. 检查权限
     if (Platform.OS === 'android' && Platform.Version >= 30) {

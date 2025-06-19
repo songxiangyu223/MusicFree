@@ -2,10 +2,8 @@ import getOrCreateMMKV from "@/utils/getOrCreateMMKV";
 import safeParse from "@/utils/safeParse";
 import { useEffect, useState } from "react";
 
-// Internal Method
-const getStore = () => {
-    return getOrCreateMMKV('App.PersistStatus');
-};
+// 内部方法
+const storage = getOrCreateMMKV('persist-status');
 
 interface IPersistStatus {
     /** 当前的音乐 */
@@ -36,7 +34,7 @@ function set<K extends keyof IPersistStatus>(
     key: K,
     value: IPersistStatus[K] | undefined,
 ) {
-    const store = getStore();
+    const store = storage;
     if (value === undefined) {
         store.delete(key);
     } else {
@@ -45,7 +43,7 @@ function set<K extends keyof IPersistStatus>(
 }
 
 function get<K extends keyof IPersistStatus>(key: K): IPersistStatus[K] | null {
-    const store = getStore();
+    const store = storage;
     const raw = store.getString(key);
     if (raw) {
         return safeParse(raw) as IPersistStatus[K];
@@ -62,7 +60,7 @@ function useValue<K extends keyof IPersistStatus>(
     );
 
     useEffect(() => {
-        const store = getStore();
+        const store = storage;
         const sub = store.addOnValueChangedListener(changedKey => {
             if (key === changedKey) {
                 setState(get(key));

@@ -135,7 +135,7 @@ function generateFilename(musicItem: IMusic.IMusicItem) {
     )}`.slice(0, 200);
 }
 
-/** todo 可以配置一个说明文件 */
+/** 待办：可以配置一个说明文件 */
 // async function loadLocalJson(dirBase: string) {
 //   const jsonPath = dirBase + 'data.json';
 //   if (await exists(jsonPath)) {
@@ -152,7 +152,7 @@ function generateFilename(musicItem: IMusic.IMusicItem) {
 let maxDownload = 3;
 /** 队列下载*/
 async function downloadNext() {
-    // todo 最大同时下载3个，可设置
+    // 待办：最大同时下载3个，可设置
     if (
         downloadingMusicQueue.length >= maxDownload ||
         pendingMusicQueue.length === 0

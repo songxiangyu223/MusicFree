@@ -71,7 +71,7 @@ async function getFolderSize(dirPath: string): Promise<number> {
             if (fn.isFile()) {
                 size += fn.size;
             }
-            // todo: 可以改成并行 promise.all
+            // 待办：可以改成并行 promise.all
             if (fn.isDirectory()) {
                 size += await getFolderSize(fn.path);
             }

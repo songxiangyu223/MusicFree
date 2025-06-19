@@ -2,8 +2,11 @@ import {SortType} from '@/constants/commonConst.ts';
 import {isSameMediaItem} from '@/utils/mediaItem.ts';
 import {createMediaIndexMap} from '@/utils/mediaIndexMap.ts';
 
-// Bug: localeCompare is slow sometimes https://github.com/facebook/hermes/issues/867
+// 错误：localeCompare有时很慢 https://github.com/facebook/hermes/issues/867
 const collator = new Intl.Collator('zh');
+
+/// 比较函数
+type CompareFn<T> = (a: T, b: T) => number;
 
 /// Compare Functions
 

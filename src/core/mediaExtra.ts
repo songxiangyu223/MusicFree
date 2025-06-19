@@ -1,6 +1,9 @@
 import getOrCreateMMKV from '@/utils/getOrCreateMMKV';
 import safeParse from '@/utils/safeParse';
 
+// 内部方法
+const storage = getOrCreateMMKV('media-extra');
+
 // Internal Method
 const getPluginStore = (pluginName: string) => {
     return getOrCreateMMKV(`MediaExtra.${pluginName}`);

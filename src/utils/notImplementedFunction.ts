@@ -1,3 +1,3 @@
 export default function notImplementedFunction() {
-  // Not implemented
+  // 未实现
 }

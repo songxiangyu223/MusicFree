@@ -1,7 +1,7 @@
 /* eslint-disable no-bitwise */
 // @ts-nocheck
 // @flow
-// Inspired by: https://github.com/davidchambers/Base64.js/blob/master/base64.js
+// 基于: https://github.com/davidchambers/Base64.js/blob/master/base64.js
 
 const chars =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';

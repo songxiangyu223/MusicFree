@@ -39,7 +39,7 @@ export default class LyricParser {
     }
 
     constructor(raw: string, options?: IOptions) {
-        // init
+        // 初始化
         this._musicItem = options?.musicItem;
         this.extra = options?.extra || {};
         this.lyricSource = options?.lyricSource;

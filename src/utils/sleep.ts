@@ -1,5 +1,5 @@
 /**
- * Sleep是用的settimeout，delay用的是backgroundtimer
+ * Sleep使用的是setTimeout，delay使用的是backgroundTimer
  * @param ms
  */
 export default function sleep(ms = 200) {
