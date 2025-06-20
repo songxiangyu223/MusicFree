@@ -41,7 +41,7 @@ export function isSameMediaItem(
     a: ICommon.IMediaBase | null | undefined,
     b: ICommon.IMediaBase | null | undefined,
 ) {
-    // eslint-disable-next-line eqeqeq
+    // 忽略类型检查，允许==比较
     return a && b && a.id == b.id && a.platform === b.platform;
 }
 
@@ -81,6 +81,7 @@ export function resetMediaItem<T extends Partial<ICommon.IMediaBase>>(
     }
 }
 
+/** 合并属性 */
 export function mergeProps(
     mediaItem: ICommon.IMediaBase,
     props: Record<string, any> | undefined,
@@ -97,14 +98,17 @@ export function mergeProps(
         : mediaItem;
 }
 
+/** 内部数据类型枚举 */
 export enum InternalDataType {
+    /** 本地路径 */
     LOCALPATH = 'localPath',
-    // 加入歌单时间
+    /** 加入歌单时间 */
     TIMESTAMP = 'timestamp',
-    // 如果时间相同，辅助排序
+    /** 如果时间相同，辅助排序 */
     SORTINDEX = 'sortIndex',
 }
 
+/** 设置内部数据 */
 export function setInternalData<T extends ICommon.IMediaBase>(
     mediaItem: T,
     key: InternalDataType,
@@ -115,6 +119,7 @@ export function setInternalData<T extends ICommon.IMediaBase>(
     });
 }
 
+/** 获取内部数据 */
 export function getInternalData<T>(
     mediaItem: ICommon.IMediaBase | null | undefined,
     key: InternalDataType,
@@ -125,6 +130,7 @@ export function getInternalData<T>(
     return objectPath.get(mediaItem, `${internalSerializeKey}.${key}`);
 }
 
+/** 清除内部数据 */
 export function trimInternalData(
     mediaItem: ICommon.IMediaBase | null | undefined,
 ) {
@@ -152,6 +158,7 @@ export async function associateLrc(
     });
 }
 
+/** 按时间戳和索引排序 */
 export function sortByTimestampAndIndex(array: any[], newArray = false) {
     if (newArray) {
         array = [...array];
