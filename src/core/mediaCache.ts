@@ -4,7 +4,7 @@ import { getMediaKey } from "@/utils/mediaItem";
 import safeParse from "@/utils/safeParse";
 import { exists, unlink } from "react-native-fs";
 
-// Internal Method
+// 内部方法
 const mediaCacheStore = getOrCreateMMKV('cache.MediaCache', true);
 
 // 最多缓存800条数据
