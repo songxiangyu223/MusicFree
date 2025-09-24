@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     View,
     ViewStyle,
+    Pressable,
 } from 'react-native';
 import rpx from '@/utils/rpx';
 import useColors from '@/hooks/useColors';
@@ -20,6 +21,13 @@ import {
 import FastImage from './fastImage';
 import {ImageStyle} from 'react-native-fast-image';
 import Icon, {IIconName} from '@/components/base/icon.tsx';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    withSpring,
+    withTiming,
+    runOnJS,
+} from 'react-native-reanimated';
 
 interface IListItemProps {
     // 是否有左右边距
@@ -67,17 +75,81 @@ function ListItem(props: IListItemProps) {
     };
 
     const colors = useColors();
+    
+    // 添加动画相关的shared values
+    const scale = useSharedValue(1);
+    const opacity = useSharedValue(1);
+    const rippleScale = useSharedValue(0);
+    const rippleOpacity = useSharedValue(0);
+    
+    // 动画样式
+    const animatedStyle = useAnimatedStyle(() => {
+        return {
+            transform: [{scale: scale.value}],
+            opacity: opacity.value,
+        };
+    });
+    
+    // 涟漪动画样式
+    const rippleAnimatedStyle = useAnimatedStyle(() => {
+        return {
+            transform: [{scale: rippleScale.value}],
+            opacity: rippleOpacity.value,
+        };
+    });
+    
+    // 按下时的动画
+    const handlePressIn = () => {
+        scale.value = withSpring(0.98, {
+            damping: 15,
+            stiffness: 300,
+        });
+        opacity.value = withSpring(0.8, {
+            damping: 15,
+            stiffness: 300,
+        });
+        
+        // 涟漪效果
+        rippleScale.value = 0;
+        rippleOpacity.value = 0.3;
+        rippleScale.value = withTiming(1, {duration: 400});
+        rippleOpacity.value = withTiming(0, {duration: 400});
+    };
+    
+    // 释放时的动画
+    const handlePressOut = () => {
+        scale.value = withSpring(1, {
+            damping: 15,
+            stiffness: 300,
+        });
+        opacity.value = withSpring(1, {
+            damping: 15,
+            stiffness: 300,
+        });
+    };
+
+    if (onPress || onLongPress) {
+        return (
+            <Animated.View style={[styles.container, animatedStyle]}>
+                <Pressable
+                    onPressIn={handlePressIn}
+                    onPressOut={handlePressOut}
+                    onPress={onPress}
+                    onLongPress={onLongPress}
+                    style={[styles.container, defaultStyle, style]}
+                >
+                    {children}
+                    {/* 涟漪效果层 */}
+                    <Animated.View style={[styles.rippleEffect, rippleAnimatedStyle]} />
+                </Pressable>
+            </Animated.View>
+        );
+    }
 
     return (
-        <TouchableHighlight
-            style={styles.container}
-            underlayColor={colors.listActive}
-            onPress={onPress}
-            onLongPress={onLongPress}>
-            <View style={[styles.container, defaultStyle, style]}>
-                {children}
-            </View>
-        </TouchableHighlight>
+        <View style={[styles.container, defaultStyle, style]}>
+            {children}
+        </View>
     );
 }
 
@@ -302,6 +374,17 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
+        overflow: 'hidden',
+    },
+    /** 涟漪效果 */
+    rippleEffect: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        borderRadius: rpx(12),
     },
     /** left */
     actionBase: {
