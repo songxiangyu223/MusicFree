@@ -1,5 +1,7 @@
 import Home from "@/pages/home";
 import MusicDetail from "@/pages/musicDetail";
+import VideoDetail from "@/pages/videoDetail";
+import VideoTest from "@/pages/videoTest";
 import TopList from "@/pages/topList";
 import TopListDetail from "@/pages/topListDetail";
 import SearchPage from "@/pages/searchPage";
@@ -36,6 +38,14 @@ export const routes: Array<IRoutes> = [
   {
     path: ROUTE_PATH.MUSIC_DETAIL,
     component: MusicDetail,
+  },
+  {
+    path: ROUTE_PATH.VIDEO_DETAIL,
+    component: VideoDetail,
+  },
+  {
+    path: ROUTE_PATH.VIDEO_TEST,
+    component: VideoTest,
   },
   {
     path: ROUTE_PATH.TOP_LIST,

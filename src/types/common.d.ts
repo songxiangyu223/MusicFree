@@ -2,6 +2,7 @@ declare namespace ICommon {
     /** 支持搜索的媒体类型 */
     export type SupportMediaType =
         | 'music'
+        | 'video'
         | 'album'
         | 'artist'
         | 'sheet'
@@ -10,6 +11,7 @@ declare namespace ICommon {
     /** 媒体定义 */
     export type SupportMediaItemBase = {
         music: IMusic.IMusicItemBase;
+        video: IVideo.IVideoItemBase;
         album: IAlbum.IAlbumItemBase;
         artist: IArtist.IArtistItemBase;
         sheet: IMusic.IMusicSheetItemBase;
@@ -61,6 +63,15 @@ declare namespace ICommon {
 
     export type WithMusicList<T> = T & {
         musicList?: IMusic.IMusicItem[];
+    };
+
+    export type WithVideoList<T> = T & {
+        videoList?: IVideo.IVideoItem[];
+    };
+
+    export type WithMediaList<T> = T & {
+        musicList?: IMusic.IMusicItem[];
+        videoList?: IVideo.IVideoItem[];
     };
 
     export type PaginationResponse<T> = {
