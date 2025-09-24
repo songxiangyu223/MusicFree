@@ -1,9 +1,8 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import rpx from '@/utils/rpx';
-import AppBar from '@/components/base/appBar';
-import VerticalSafeAreaView from '@/components/base/verticalSafeAreaView';
-import globalStyle from '@/constants/globalStyle';
+import {StandardNavBar} from '@/components/navigation';
+import {ScreenWrapper} from '@/components/layout';
 import Button from '@/components/base/textButton.tsx';
 import Body from './body';
 import {useNavigation} from '@react-navigation/native';
@@ -11,8 +10,9 @@ import {useNavigation} from '@react-navigation/native';
 export default function SetCustomTheme() {
     const navigation = useNavigation();
     return (
-        <VerticalSafeAreaView style={globalStyle.fwflex1}>
-            <AppBar
+        <ScreenWrapper useVerticalSafeArea>
+            <StandardNavBar
+                title="自定义背景"
                 withStatusBar
                 actionComponent={
                     <Button
@@ -23,11 +23,10 @@ export default function SetCustomTheme() {
                         fontColor="appBarText">
                         完成
                     </Button>
-                }>
-                自定义背景
-            </AppBar>
+                }
+            />
             <Body />
-        </VerticalSafeAreaView>
+        </ScreenWrapper>
     );
 }
 

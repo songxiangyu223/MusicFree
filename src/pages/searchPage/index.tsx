@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
 import NavBar from './components/navBar';
 import {useAtom, useSetAtom} from 'jotai';
 import {
@@ -11,16 +10,13 @@ import {
 } from './store/atoms';
 import HistoryPanel from './components/historyPanel';
 import ResultPanel from './components/resultPanel';
-import MusicBar from '@/components/musicBar';
-import Loading from '@/components/base/loading';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import StatusBar from '@/components/base/statusBar';
-import NoPlugin from '../../components/base/noPlugin';
+import {PageContainer, PageStatus as LayoutPageStatus} from '@/components/layout';
 
 export default function () {
     const [pageStatus, setPageStatus] = useAtom(pageStatusAtom);
     const setQuery = useSetAtom(queryAtom);
     const setSearchResultsState = useSetAtom(searchResultsAtom);
+    
     useEffect(() => {
         setSearchResultsState(initSearchResults);
         return () => {
@@ -29,31 +25,38 @@ export default function () {
         };
     }, []);
 
+    // 将搜索页面状态映射到布局组件状态
+    const getLayoutStatus = () => {
+        switch (pageStatus) {
+            case PageStatus.SEARCHING:
+                return LayoutPageStatus.LOADING;
+            case PageStatus.NO_PLUGIN:
+                return LayoutPageStatus.NO_PLUGIN;
+            case PageStatus.RESULT:
+                return LayoutPageStatus.SUCCESS;
+            case PageStatus.EDITING:
+            default:
+                return LayoutPageStatus.SUCCESS;
+        }
+    };
+
+    const renderContent = () => {
+        if (pageStatus === PageStatus.EDITING) {
+            return <HistoryPanel />;
+        }
+        if (pageStatus === PageStatus.RESULT) {
+            return <ResultPanel />;
+        }
+        return null;
+    };
+
     return (
-        <SafeAreaView edges={['bottom', 'top']} style={style.wrapper}>
-            <StatusBar />
+        <PageContainer 
+            status={getLayoutStatus()}
+            noPluginType="搜索"
+        >
             <NavBar />
-            <SafeAreaView edges={['left', 'right']} style={style.wrapper}>
-                <View style={style.flex1}>
-                    {pageStatus === PageStatus.EDITING && <HistoryPanel />}
-                    {pageStatus === PageStatus.SEARCHING && <Loading />}
-                    {pageStatus === PageStatus.RESULT && <ResultPanel />}
-                    {pageStatus === PageStatus.NO_PLUGIN && (
-                        <NoPlugin notSupportType="搜索" />
-                    )}
-                </View>
-            </SafeAreaView>
-            <MusicBar />
-        </SafeAreaView>
+            {renderContent()}
+        </PageContainer>
     );
 }
-
-const style = StyleSheet.create({
-    wrapper: {
-        width: '100%',
-        flex: 1,
-    },
-    flex1: {
-        flex: 1,
-    },
-});
