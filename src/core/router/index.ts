@@ -12,6 +12,10 @@ export const ROUTE_PATH = {
     HOME: 'home',
     /** 音乐播放页 */
     MUSIC_DETAIL: 'music-detail',
+    /** 视频播放页 */
+    VIDEO_DETAIL: 'video-detail',
+    /** 视频测试页 */
+    VIDEO_TEST: 'video-test',
     /** 搜索页 */
     SEARCH_PAGE: 'search-page',
     /** 本地歌单页 */
@@ -56,6 +60,8 @@ type RouterParamsBase = Record<RoutePaths, any>;
 interface RouterParams extends RouterParamsBase {
     home: undefined;
     'music-detail': undefined;
+    'video-detail': undefined;
+    'video-test': undefined;
     'search-page': undefined;
     'local-sheet-detail': {
         id: string;

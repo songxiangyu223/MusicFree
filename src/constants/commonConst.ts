@@ -39,6 +39,7 @@ export const StorageKeys = {
     PluginMetaKey: 'plugin-meta',
     MediaCache: 'media-cache',
     LocalMusicSheet: 'local-music-sheet',
+    LocalVideoSheet: 'local-video-sheet',
 };
 
 export const CacheControl = {
@@ -60,10 +61,27 @@ export const supportLocalMediaType = [
     '.opus',
 ];
 
+export const supportLocalVideoType = [
+    '.mp4',
+    '.mkv',
+    '.avi',
+    '.mov',
+    '.wmv',
+    '.flv',
+    '.webm',
+    '.m4v',
+];
+
 /** 全局事件 */
 export enum EDeviceEvents {
     /** 刷新歌词 */
     REFRESH_LYRIC = 'refresh-lyric',
+    /** 视频播放开始 */
+    VIDEO_PLAY_START = 'video-play-start',
+    /** 视频播放结束 */
+    VIDEO_PLAY_END = 'video-play-end',
+    /** 媒体类型切换 */
+    MEDIA_TYPE_CHANGE = 'media-type-change',
 }
 
 const ANIMATION_EASING: EasingFunction = Easing.out(Easing.exp);
