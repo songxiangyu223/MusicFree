@@ -20,8 +20,6 @@
 - 🎨 Harmony OS
 - 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 
-**当前版本：** v0.5.1
-
 如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
