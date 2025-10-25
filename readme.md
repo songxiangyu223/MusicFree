@@ -20,7 +20,7 @@
 - 🎨 Harmony OS
 - 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 
-**当前版本：** v0.5.1
+**当前版本：** v0.5.1 (2025.4.4)
 
 如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
 
@@ -57,24 +57,36 @@
 本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**实现。
 
 **插件支持的功能：**
-- 🔍 搜索（音乐、专辑、作者）
-- ▶️ 在线播放
+- 🔍 搜索（音乐、专辑、作者、歌单）
+- ▶️ 在线播放（支持多种音质）
 - 💿 查看专辑详情
 - 👤 查看作者详细信息
 - 📥 导入单曲、导入歌单
 - 📝 获取歌词
+- 💬 查看歌曲评论
+- 🎯 推荐歌单
+- 📊 音乐榜单
 
 ### 🎨 定制化 & 无广告
-- 支持浅色/深色模式
-- 支持自定义背景
-- 基于 AGPL 协议开源，永久免费
-- 无任何广告
+- 🌓 支持浅色/深色模式，可跟随系统
+- 🖼️ 支持自定义背景、模糊度、透明度
+- 🎵 桌面歌词功能（支持自定义颜色和大小）
+- 📱 状态栏沉浸式体验
+- 💰 基于 AGPL 3.0 协议开源，永久免费
+- 🚫 无任何广告
 
 ### 🔒 隐私保护
 所有的数据都存储在本地，本软件不会收集你的任何个人信息。
 
-### 📄 歌词关联
-支持歌词关联功能，可以将多首歌的歌词关联起来（如 A→B→C），实现歌词共享。
+### 🎼 强大的音乐功能
+- 📄 歌词搜索与关联
+- 🔄 自动换源功能
+- ⚡ 倍速播放
+- 📂 支持 Webdav 备份 & 播放
+- 💾 本地音乐播放（支持多种格式：mp3, flac, wav, m4a, ogg, aac）
+- 📝 播放历史记录
+- ⏰ 定时关闭
+- 📥 支持多音质下载
 
 ## 🔌 插件
 
@@ -110,6 +122,8 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 ## 📦 下载地址
 
+> **系统要求：** Android 7.0 及以上版本
+
 - **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
 - **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
 - **公众号：** 回复「MusicFree」获取下载链接
@@ -129,6 +143,20 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 - 🐛 提交 [Issue](https://github.com/maotoumao/MusicFree/issues)
 - 💡 在 [Discussions](https://github.com/maotoumao/MusicFree/discussions) 开启话题
 
+## 🤝 贡献指南
+
+欢迎各种形式的贡献，包括但不限于：
+- 🐛 提交 Bug 报告
+- 💡 提出新功能建议
+- 📝 改进文档
+- 🔧 提交代码修复
+- 🔌 开发插件
+
+在提交 PR 之前，请确保：
+1. 代码符合项目的编码规范（使用 ESLint 和 Prettier）
+2. 运行 `npm run lint` 检查代码风格
+3. 充分测试你的修改
+
 ## 💖 支持项目
 
 如果你喜欢这个项目，欢迎通过以下方式支持：
@@ -136,6 +164,7 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 1. ⭐ Star 这个项目，分享给身边的朋友
 2. 📱 关注公众号「一只猫头猫」获取最新信息
 3. 📺 关注 B 站 [不想睡觉猫头猫](https://space.bilibili.com/12866223)
+4. 🔌 开发和分享有用的插件
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
 
@@ -145,9 +174,24 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 - [果核剥壳](https://mp.weixin.qq.com/s/F6hMbLv_a-Ty0fPA_0P0Rg)
 - [小棉袄](https://mp.weixin.qq.com/s/Fqe3o7vcTw0KDKoB-gsQfg)
 
+## 🔧 技术栈
+
+- **框架：** React Native 0.76.5
+- **开发语言：** TypeScript
+- **状态管理：** Jotai
+- **导航：** React Navigation
+- **音频播放：** react-native-track-player
+- **存储：** react-native-mmkv
+
 ## 📝 更新日志
 
-详见 [ChangeLog](./changelog.md)
+### 最新更新 (v0.5.1 - 2025.4.4)
+- 【修复】修复插件开关点击无效的问题
+- 【修复】修复开屏图片消失的问题
+- 【优化】增加新建歌单名称的长度限制
+- 【优化】优化插件安装失败的提示样式
+
+完整更新日志详见 [ChangeLog](./changelog.md)
 
 ---
 本项目仅供学习参考使用，基于 AGPL3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
