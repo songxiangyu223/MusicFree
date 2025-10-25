@@ -20,11 +20,13 @@
 - 🎨 Harmony OS
 - 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 
-**当前版本：** v0.5.1
+**当前版本：** v0.5.1（最后更新：2025.4.4）
 
 如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
+
+**关注公众号「一只猫头猫」获取最新消息和下载链接**
 
 软件下载方式、插件使用说明、插件开发文档可去站点 [https://musicfree.catcat.work](https://musicfree.catcat.work) 查看。
 
@@ -57,24 +59,36 @@
 本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**实现。
 
 **插件支持的功能：**
-- 🔍 搜索（音乐、专辑、作者）
+- 🔍 搜索（音乐、专辑、作者、歌单）
 - ▶️ 在线播放
 - 💿 查看专辑详情
 - 👤 查看作者详细信息
 - 📥 导入单曲、导入歌单
 - 📝 获取歌词
+- 💬 查看评论区
+- 🎵 榜单及推荐歌单
 
 ### 🎨 定制化 & 无广告
-- 支持浅色/深色模式
-- 支持自定义背景
-- 基于 AGPL 协议开源，永久免费
-- 无任何广告
+- 🌓 支持浅色/深色模式，可跟随系统
+- 🖼️ 支持自定义背景、背景模糊度、透明度
+- 🎨 支持自定义主题颜色
+- 💰 基于 AGPL 3.0 协议开源，永久免费
+- 🚫 无任何广告，纯净体验
 
 ### 🔒 隐私保护
-所有的数据都存储在本地，本软件不会收集你的任何个人信息。
+- 📱 所有数据本地存储，不收集任何个人信息
+- ☁️ 支持 Webdav 备份，数据掌握在自己手中
+- 🔐 无后台、无追踪、无埋点
 
-### 📄 歌词关联
-支持歌词关联功能，可以将多首歌的歌词关联起来（如 A→B→C），实现歌词共享。
+### 🎵 丰富的播放功能
+- 📄 歌词关联和自动搜索歌词
+- 🖥️ 桌面歌词显示
+- ⏱️ 定时关闭
+- 🔄 倍速播放
+- 🎚️ 多音质选择
+- 📂 支持本地音乐导入（支持 flac, wav, m4a, ogg, aac 等格式）
+- 📜 历史播放记录
+- 🔀 自动换源功能
 
 ## 🔌 插件
 
@@ -110,9 +124,16 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 ## 📦 下载地址
 
-- **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
-- **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
-- **公众号：** 回复「MusicFree」获取下载链接
+### Android 版本
+- 📥 **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
+- 📥 **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
+- 📱 **公众号：** 关注「一只猫头猫」回复「MusicFree」获取下载链接
+
+**⚠️ 系统要求：** Android 7.0 及以上（v0.5.0 之后的版本）
+
+### 桌面版本
+- 💻 **MusicFreeDesktop:** [https://github.com/maotoumao/MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
+- 支持 Windows、macOS、Linux
 
 ## ❓ Q&A
 
@@ -136,6 +157,9 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 1. ⭐ Star 这个项目，分享给身边的朋友
 2. 📱 关注公众号「一只猫头猫」获取最新信息
 3. 📺 关注 B 站 [不想睡觉猫头猫](https://space.bilibili.com/12866223)
+4. 🐛 提交 Bug 报告和功能建议
+5. 🔌 开发和分享插件
+6. 📝 完善项目文档
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
 
@@ -147,10 +171,43 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 ## 📝 更新日志
 
-详见 [ChangeLog](./changelog.md)
+### 最新版本 v0.5.1 (2025.4.4)
+1. 【修复】修复插件开关点击无效的问题
+2. 【修复】修复开屏图片消失的问题
+3. 【优化】增加新建歌单名称的长度限制
+4. 【优化】优化插件安装失败的提示样式
+
+**完整更新日志详见：** [ChangeLog](./changelog.md)
 
 ---
-本项目仅供学习参考使用，基于 AGPL3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
+
+## 🛠️ 技术栈
+
+- **框架：** React Native 0.76.5
+- **导航：** React Navigation
+- **状态管理：** Jotai
+- **音频播放：** react-native-track-player
+- **存储：** MMKV
+- **UI 组件：** 自研组件库
+
+---
+
+## 🤝 贡献指南
+
+欢迎任何形式的贡献！如果你想为 MusicFree 做出贡献：
+
+1. Fork 本仓库
+2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的改动 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启一个 Pull Request
+
+**开发环境要求：**
+- Node.js >= 18
+- React Native 开发环境配置
+
+---
+本项目仅供学习参考使用，基于 AGPL 3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
 
 ## 📸 应用截图
 
