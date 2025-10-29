@@ -20,13 +20,15 @@
 - 🎨 Harmony OS
 - 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 
-**当前版本：** v0.5.1
+**当前版本：** v0.5.1 (2025.4.4)
+
+**官方网站：** [https://musicfree.catcat.work](https://musicfree.catcat.work)
 
 如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
 
-软件下载方式、插件使用说明、插件开发文档可去站点 [https://musicfree.catcat.work](https://musicfree.catcat.work) 查看。
+软件下载方式、插件使用说明、插件开发文档可去站点查看。
 
 > [!NOTE]
 > - 如果你在其他的平台看到收费版/无广告版/破解版，都是假的，本来就是开源项目，**遇到收费版请直接举报**；
@@ -57,24 +59,48 @@
 本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**实现。
 
 **插件支持的功能：**
-- 🔍 搜索（音乐、专辑、作者）
-- ▶️ 在线播放
+- 🔍 搜索（音乐、专辑、作者、歌单）
+- ▶️ 在线播放 & 本地播放
 - 💿 查看专辑详情
 - 👤 查看作者详细信息
+- 📊 榜单 & 推荐歌单
 - 📥 导入单曲、导入歌单
-- 📝 获取歌词
+- 📝 获取歌词 & 歌词搜索
+- 💬 评论区功能
 
 ### 🎨 定制化 & 无广告
-- 支持浅色/深色模式
-- 支持自定义背景
-- 基于 AGPL 协议开源，永久免费
+- 支持浅色/深色模式，支持跟随系统
+- 支持自定义背景、透明度、模糊度
+- 支持桌面歌词
+- 基于 AGPL 3.0 协议开源，永久免费
 - 无任何广告
+
+### 🎵 播放功能
+- 多种播放模式（顺序、随机、单曲循环等）
+- 倍速播放
+- 音质选择
+- 自动换源（失效时自动切换其他源）
+- 支持 m3u8 流媒体
+- 后台播放
+- 定时关闭
+- 播放历史记录
+
+### 📦 数据管理
+- 支持最多 10000 首歌曲的歌单
+- 本地音乐导入（支持多种格式）
+- Webdav 备份 & 同步
+- 歌单导入/导出
+- 批量编辑 & 排序
 
 ### 🔒 隐私保护
 所有的数据都存储在本地，本软件不会收集你的任何个人信息。
 
-### 📄 歌词关联
-支持歌词关联功能，可以将多首歌的歌词关联起来（如 A→B→C），实现歌词共享。
+### 📄 歌词功能
+- 歌词显示 & 翻译
+- 歌词关联功能，实现歌词共享
+- 桌面歌词（悬浮窗）
+- 歌词大小调整
+- 自动搜索歌词
 
 ## 🔌 插件
 
@@ -110,9 +136,14 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 ## 📦 下载地址
 
+**Android APK 下载：**
 - **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
 - **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
 - **公众号：** 回复「MusicFree」获取下载链接
+
+**系统要求：**
+- Android 7.0 及以上（v0.5.0 版本开始）
+- 低于 Android 7.0 的设备请使用 v0.4.x 版本
 
 ## ❓ Q&A
 
@@ -129,6 +160,52 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 - 🐛 提交 [Issue](https://github.com/maotoumao/MusicFree/issues)
 - 💡 在 [Discussions](https://github.com/maotoumao/MusicFree/discussions) 开启话题
 
+## 🛠️ 技术栈
+
+- **框架：** React Native 0.76.5
+- **语言：** TypeScript
+- **状态管理：** Jotai
+- **导航：** React Navigation
+- **播放器：** react-native-track-player
+- **存储：** MMKV, AsyncStorage
+- **UI 组件：** 自研组件库
+
+## 👨‍💻 开发相关
+
+### 环境要求
+- Node.js >= 18
+- React Native 开发环境（Android Studio / Xcode）
+
+### 运行项目
+```bash
+# 安装依赖
+yarn install
+
+# 运行 Android
+yarn android
+
+# 运行 iOS
+yarn ios
+
+# 启动 Metro
+yarn start
+```
+
+### 构建项目
+```bash
+# Android Release 构建
+yarn build-android
+```
+
+### 代码规范
+```bash
+# ESLint 检查
+yarn lint
+
+# 运行测试
+yarn test
+```
+
 ## 💖 支持项目
 
 如果你喜欢这个项目，欢迎通过以下方式支持：
@@ -136,6 +213,8 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 1. ⭐ Star 这个项目，分享给身边的朋友
 2. 📱 关注公众号「一只猫头猫」获取最新信息
 3. 📺 关注 B 站 [不想睡觉猫头猫](https://space.bilibili.com/12866223)
+4. 🐛 提交 Bug 反馈和功能建议
+5. 🔌 开发和分享插件
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
 
@@ -149,8 +228,25 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 详见 [ChangeLog](./changelog.md)
 
+### 最近更新 (v0.5.1)
+1. 【修复】修复插件开关点击无效的问题
+2. 【修复】修复开屏图片消失的问题
+3. 【优化】增加新建歌单名称的长度限制
+4. 【优化】优化插件安装失败的提示样式
+
 ---
-本项目仅供学习参考使用，基于 AGPL3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
+
+## 📜 开源协议
+
+本项目基于 **AGPL-3.0** 协议开源。
+
+- ✅ 允许学习、使用、修改代码
+- ✅ 允许二次分发（需遵守协议）
+- ❌ 禁止用于商业目的
+- ❌ 禁止用于违法用途
+- ⚠️ 二次分发请保留代码出处
+
+本项目仅供学习参考使用，请在符合法律法规的情况下合理使用本项目。
 
 ## 📸 应用截图
 
