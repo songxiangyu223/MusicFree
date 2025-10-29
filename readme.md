@@ -16,11 +16,17 @@
 一个插件化、定制化、无广告的免费音乐播放器。
 
 **支持平台：**
-- 📱 Android 
+- 📱 Android (7.0+)
 - 🎨 Harmony OS
 - 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 
-**当前版本：** v0.5.1
+**技术栈：**
+- ⚛️ React Native 0.76.5
+- 📦 TypeScript
+- 🎵 React Native Track Player
+- 💾 MMKV (高性能存储)
+
+**当前版本：** v0.5.1 (最后更新: 2025.4.4)
 
 如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
 
@@ -57,24 +63,53 @@
 本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**实现。
 
 **插件支持的功能：**
-- 🔍 搜索（音乐、专辑、作者）
+- 🔍 搜索（音乐、专辑、作者、歌单）
 - ▶️ 在线播放
 - 💿 查看专辑详情
 - 👤 查看作者详细信息
 - 📥 导入单曲、导入歌单
 - 📝 获取歌词
+- 🎯 榜单获取
+- 💬 评论区功能
+- 📻 推荐歌单
 
 ### 🎨 定制化 & 无广告
-- 支持浅色/深色模式
-- 支持自定义背景
-- 基于 AGPL 协议开源，永久免费
-- 无任何广告
+- 🌓 支持浅色/深色模式（可跟随系统）
+- 🖼️ 支持自定义背景（图片、模糊度、透明度）
+- 🎨 主题色自适应专辑封面
+- 📱 桌面歌词支持
+- 🎵 歌词大小、进度可调
+- 🆓 基于 AGPL 3.0 协议开源，永久免费
+- 🚫 无任何广告
+
+### 🎵 强大的播放功能
+- 🎚️ 倍速播放（0.5x - 2.0x）
+- 🎼 多种播放模式（顺序、随机、单曲循环）
+- ⏰ 定时关闭
+- 🎧 多音质支持
+- 🔄 自动换源（当前源失效时）
+- 📶 移动网络播放控制
+- 🔔 通知栏播放控制
+- 📥 支持下载（多音质）
 
 ### 🔒 隐私保护
-所有的数据都存储在本地，本软件不会收集你的任何个人信息。
+- 💾 所有数据存储在本地
+- ☁️ 支持 WebDAV 备份与同步
+- 🔐 不收集任何个人信息
+- 🔓 完全开源，代码可审计
 
-### 📄 歌词关联
-支持歌词关联功能，可以将多首歌的歌词关联起来（如 A→B→C），实现歌词共享。
+### 📄 歌词功能
+- 🔍 自动搜索歌词
+- 📝 支持歌词翻译
+- 🔗 歌词关联功能
+- 🎯 歌词进度调整
+- 🖥️ 桌面歌词（需授权悬浮窗权限）
+
+### 📁 本地音乐
+- 📂 导入本地音乐文件
+- 🎵 支持多种格式（mp3, flac, wav, m4a, aac, ogg）
+- 🎨 自动读取内置封面
+- 📝 自动读取内嵌歌词/同名lrc文件
 
 ## 🔌 插件
 
@@ -83,6 +118,8 @@
 插件本质上是一个满足插件协议的 **CommonJS** 模块。开发者只需要关心输入输出逻辑，分页、缓存等全都交给 MusicFree 控制。
 
 **插件开发文档：** [https://musicfree.catcat.work/plugin/introduction.html](https://musicfree.catcat.work/plugin/introduction.html)
+
+**插件协议说明：** 插件是一个符合特定接口规范的 CommonJS 模块，支持自定义用户变量配置
 
 **⚠️ 使用须知：**
 
@@ -112,7 +149,14 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 - **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
 - **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
+- **飞书云文档备用下载**（查看最新版本公告）
+- **百度网盘备用下载**（查看对应版本说明）
 - **公众号：** 回复「MusicFree」获取下载链接
+
+> [!WARNING]
+> **系统要求：**
+> - Android 7.0 及以上版本
+> - v0.5.0 之前的版本支持 Android 5.0+，如需低版本支持请下载历史版本
 
 ## ❓ Q&A
 
@@ -133,11 +177,19 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 如果你喜欢这个项目，欢迎通过以下方式支持：
 
-1. ⭐ Star 这个项目，分享给身边的朋友
-2. 📱 关注公众号「一只猫头猫」获取最新信息
-3. 📺 关注 B 站 [不想睡觉猫头猫](https://space.bilibili.com/12866223)
+1. ⭐ **Star 这个项目**，分享给身边的朋友
+2. 🐛 **提交 Bug 反馈**和功能建议
+3. 🔌 **开发插件**，丰富音源生态
+4. 📝 **完善文档**，帮助更多用户
+5. 💻 **贡献代码**，提交 Pull Request
+6. 📱 关注公众号「一只猫头猫」获取最新信息
+7. 📺 关注 B 站 [不想睡觉猫头猫](https://space.bilibili.com/12866223)
 
 ![微信公众号](./src/assets/imgs/wechat_channel.jpg)
+
+### 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=maotoumao/MusicFree&type=Date)](https://star-history.com/#maotoumao/MusicFree&Date)
 
 ### 📣 媒体推荐
 
@@ -148,6 +200,18 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 ## 📝 更新日志
 
 详见 [ChangeLog](./changelog.md)
+
+**最新版本亮点 (v0.5.1):**
+- 修复插件开关点击无效的问题
+- 修复开屏图片消失的问题
+- 增加新建歌单名称的长度限制
+- 优化插件安装失败的提示样式
+
+**v0.5.0 重要更新:**
+- 升级 React Native 到 0.76.5
+- 修复长时间运行后闪退问题
+- 新增设置本地歌单封面功能
+- 优化代码逻辑和性能
 
 ---
 本项目仅供学习参考使用，基于 AGPL3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
