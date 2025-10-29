@@ -1,189 +1,347 @@
+<div align="center">
+
 # MusicFree
 
-![GitHub Repo stars](https://img.shields.io/github/stars/maotoumao/MusicFree) 
-![GitHub forks](https://img.shields.io/github/forks/maotoumao/MusicFree)
-![star](https://gitcode.com/maotoumao/MusicFree/star/badge.svg)
+**插件化、定制化、无广告的免费音乐播放器**
 
-![GitHub License](https://img.shields.io/github/license/maotoumao/MusicFree)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maotoumao/MusicFree/total)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/maotoumao/MusicFree)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/maotoumao/MusicFree)
+[![GitHub Stars](https://img.shields.io/github/stars/maotoumao/MusicFree?style=flat-square&logo=github)](https://github.com/maotoumao/MusicFree)
+[![GitHub Forks](https://img.shields.io/github/forks/maotoumao/MusicFree?style=flat-square&logo=github)](https://github.com/maotoumao/MusicFree)
+[![GitHub License](https://img.shields.io/github/license/maotoumao/MusicFree?style=flat-square)](LICENSE)
+[![GitHub Downloads](https://img.shields.io/github/downloads/maotoumao/MusicFree/total?style=flat-square&logo=github)](https://github.com/maotoumao/MusicFree/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/maotoumao/MusicFree?style=flat-square&logo=github)](https://github.com/maotoumao/MusicFree/issues)
+[![Version](https://img.shields.io/github/package-json/v/maotoumao/MusicFree?style=flat-square)](package.json)
 
+[简体中文](readme.md) | [English](README_EN.md)
 
+[官方文档](https://musicfree.catcat.work) · [问题反馈](https://github.com/maotoumao/MusicFree/issues) · [更新日志](changelog.md)
 
-## 简介
-
-一个插件化、定制化、无广告的免费音乐播放器。
-
-**支持平台：**
-- 📱 Android 
-- 🎨 Harmony OS
-- 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
-
-**当前版本：** v0.5.1
-
-如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
-
-![微信公众号](./src/assets/imgs/wechat_channel.jpg)
-
-软件下载方式、插件使用说明、插件开发文档可去站点 [https://musicfree.catcat.work](https://musicfree.catcat.work) 查看。
-
-> [!NOTE]
-> - 如果你在其他的平台看到收费版/无广告版/破解版，都是假的，本来就是开源项目，**遇到收费版请直接举报**；
-> - 软件首先是自用，顺带分享出来希望可以帮助到有需要的人；是业余作品，会尽量保持维护，不过每天能写的时间有限（半小时左右），目测会有很长一段时间处于不稳定测试版本，且更新频率不定，请谨慎使用；
-> - 软件的第三方插件、及其所产生的数据与本软件无关，请合理合法使用，可能产生的版权数据请及时删除。
-> - **请不要以 VIP/破解版为噱头进行宣传**，示例仓库基于互联网公开接口封装，并**过滤掉所有 VIP、试听、付费歌曲**，且示例仓库以后也**不会提供具备破解功能的插件**；
-> - 本软件的相关信息**只会主动投放在 Git 仓库以及公众号“一只猫头猫”中**，如果希望写文章介绍本软件请自便，但还烦请**如实陈述，涉及到示例仓库请给插件源打个码**，不要给软件增加一些不实的功能（尽管我也想有）；描述冲突的地方以本仓库为准。
+</div>
 
 
-## 项目使用约定：
-本项目基于 AGPL 3.0 协议开源，使用此项目时请遵守开源协议。  
-除此外，希望你在使用代码时已经了解以下额外说明：
-
-1. 打包、二次分发 **请保留代码出处**：https://github.com/maotoumao/MusicFree
-2. 请不要用于商业用途，合法合规使用代码；
-3. 如果开源协议变更，将在此 Github 仓库更新，不另行通知。
-
-> [!CAUTION]
-> 👎 小米/华为/vivo等<ins>应用市场的 MusicFree </ins>和本软件无关，**是套用本软件名称和 Logo 的广告软件**。
->
-> 👎 速悦音乐基于本软件二次开发，改动点仅仅是内置插件、修改一些 UI 以及引流，**并未遵守本项目的开源协议，且拒绝沟通**。
 
 ---
 
-## ✨ 特性
+## 📖 简介
+
+MusicFree 是一款**插件化**、**定制化**、**无广告**的免费音乐播放器。软件本身是一个播放器框架，所有音源均通过插件提供，为用户提供最大的自由度和可扩展性。
+
+### 支持平台
+
+- 📱 **Android 7.0+**
+- 🎨 **Harmony OS**
+- 💻 **桌面版**: [MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop) (支持 Windows / macOS / Linux)
+
+### 快速开始
+
+- 📥 [下载安装包](#-下载地址)
+- 📚 [查看使用文档](https://musicfree.catcat.work)
+- 🔌 [插件安装教程](#-插件)
+- 💬 [加入社区讨论](#-交流社区)
+
+> [!WARNING]
+> 
+> **重要声明**
+> 
+> - 本项目完全开源免费，**如遇收费版请直接举报**
+> - 应用市场（小米/华为/vivo等）的 MusicFree 为**假冒软件**，与本项目无关
+> - **速悦音乐**基于本项目二次开发但**未遵守开源协议**，与本项目无关
+> - 软件的第三方插件及其数据与本软件无关，请合法使用
+> - 示例插件仓库**已过滤所有 VIP、付费歌曲**，不提供破解功能
+> - 本软件官方信息仅发布在 **GitHub** 和公众号**「一只猫头猫」**
+
+
+## 📜 开源协议
+
+本项目基于 [AGPL 3.0](LICENSE) 协议开源。使用本项目代码时请遵守以下规定：
+
+1. ✅ **保留代码出处**: 打包或二次分发时必须注明来源 `https://github.com/maotoumao/MusicFree`
+2. ❌ **禁止商业用途**: 请勿将本项目用于任何商业目的
+3. 📝 **协议变更**: 如有变更将在 GitHub 仓库更新，不另行通知
+4. ⚖️ **合法使用**: 请遵守当地法律法规，合理合法使用本项目
+
+---
+
+---
+
+## ✨ 核心特性
 
 ### 🔌 插件化架构
-本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**实现。
 
-**插件支持的功能：**
-- 🔍 搜索（音乐、专辑、作者）
-- ▶️ 在线播放
-- 💿 查看专辑详情
-- 👤 查看作者详细信息
-- 📥 导入单曲、导入歌单
-- 📝 获取歌词
+MusicFree 本身只是一个播放器框架，**不内置任何音源**。所有功能通过插件实现，用户可自由选择和定制。
 
-### 🎨 定制化 & 无广告
-- 支持浅色/深色模式
-- 支持自定义背景
-- 基于 AGPL 协议开源，永久免费
-- 无任何广告
+**插件能力：**
+
+- 🔍 **搜索**: 支持音乐、专辑、歌手、歌单搜索
+- ▶️ **播放**: 在线音乐播放
+- 💿 **专辑**: 查看专辑详情及歌曲列表
+- 👤 **歌手**: 查看歌手信息及作品
+- 📥 **导入**: 批量导入单曲、歌单
+- 📝 **歌词**: 获取同步歌词
+- 💬 **评论**: 查看歌曲评论区（v0.4.0+）
+
+### 🎨 高度定制化
+
+- 🌗 **主题**: 浅色/深色模式，支持跟随系统
+- 🖼️ **背景**: 自定义背景图片、模糊度、透明度
+- 🎵 **歌词**: 支持桌面歌词、歌词翻译、进度调整
+- 📱 **界面**: 多种布局样式可选
+- 🆓 **无广告**: 永久免费，无任何广告
 
 ### 🔒 隐私保护
-所有的数据都存储在本地，本软件不会收集你的任何个人信息。
 
-### 📄 歌词关联
-支持歌词关联功能，可以将多首歌的歌词关联起来（如 A→B→C），实现歌词共享。
+- 💾 **本地存储**: 所有数据存储在本地，不上传云端
+- 🚫 **无追踪**: 不收集任何用户信息和使用数据
+- 🔐 **开源透明**: 代码完全开源，可自行审查
 
-## 🔌 插件
+### 🎵 播放功能
+
+- 📄 **歌词**: 支持歌词搜索、关联、翻译
+- 🎚️ **音质**: 多种音质选择
+- ⏩ **倍速**: 支持倍速播放
+- 🔀 **播放模式**: 顺序/随机/单曲循环
+- ⏱️ **定时关闭**: 支持定时停止播放
+- 📦 **本地音乐**: 支持导入本地音乐文件
+- ☁️ **WebDAV**: 支持 WebDAV 云端备份与播放
+
+---
+
+## 🔌 插件系统
 
 ### 插件简介
 
-插件本质上是一个满足插件协议的 **CommonJS** 模块。开发者只需要关心输入输出逻辑，分页、缓存等全都交给 MusicFree 控制。
+插件是一个符合 MusicFree 插件协议的 **CommonJS** 模块。开发者只需关注业务逻辑，分页、缓存等由框架统一处理。
 
-**插件开发文档：** [https://musicfree.catcat.work/plugin/introduction.html](https://musicfree.catcat.work/plugin/introduction.html)
+- 📚 **开发文档**: [插件开发指南](https://musicfree.catcat.work/plugin/introduction.html)
+- 📦 **示例仓库**: [MusicFreePlugins](https://github.com/maotoumao/MusicFreePlugins)
+- 🛠️ **插件协议**: CommonJS 模块，支持用户变量配置
 
-**⚠️ 使用须知：**
+> [!WARNING]
+> 
+> **插件使用须知**
+> 
+> - ⚠️ 请自行鉴别第三方插件的安全性，不要安装来路不明的插件
+> - 📝 插件产生的数据与本软件无关，请合法使用并及时删除版权数据
+> - 🚫 本软件不提供任何破解功能，建议搭建个人音乐库使用
 
-- 如果你是使用第三方下载的插件，那么请自行鉴别插件的安全性（基本上看下没有奇怪的网络请求什么的就好了；自己写的最安全，*不要安装来路不明的东西*），防止恶意代码破坏。因为第三方恶意插件导致的可能的损失与本软件无关。
+### 📥 插件安装
 
-- 插件使用过程中可能会产生某些和本软件无关的版权数据，插件、以及插件产生的任何数据与本软件无关，请使用者自行斟酌，及时删除数据，本软件不提倡也不会提供任何破解行为，你可以搭建自己的离线音乐仓库使用。
+#### 方式一：从网络安装（推荐）
 
-### 📥 插件使用
+1. 打开 MusicFree → **侧边栏** → **设置** → **插件设置**
+2. 选择**从网络安装插件**
+3. 输入插件源地址：
 
-**安装方式：**
-1. 打开应用 → 侧边栏 → 设置 → 插件设置
-2. 支持安装本地插件（.js 文件）和从网络安装插件（.json 描述文件）
-3. 示例插件仓库：[MusicFreePlugins](https://github.com/maotoumao/MusicFreePlugins)
-
-**快速安装：**
-
-从网络安装插件，输入以下地址：
 ```
 https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 ```
 
-**详细教程：**
-- 📖 图文教程：[MusicFree 插件使用指南](https://mp.weixin.qq.com/s?__biz=MzkxOTM5MDI4MA==&mid=2247483875&idx=1&sn=aedf8bb909540634d927de7fd2b4b8b1&chksm=c1a390c4f6d419d233908bb781d418c6b9fd2ca82e9e93291e7c93b8ead3c50ca5ae39668212#rd)
-- 🌐 官方文档：[https://musicfree.catcat.work/usage/mobile/install-plugin.html](https://musicfree.catcat.work/usage/mobile/install-plugin.html)
+或 GitHub 地址：
 
-## 📦 下载地址
+```
+https://raw.githubusercontent.com/maotoumao/MusicFreePlugins/master/plugins.json
+```
 
-- **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
-- **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
-- **公众号：** 回复「MusicFree」获取下载链接
+#### 方式二：本地安装
 
-## ❓ Q&A
+1. 下载 `.js` 插件文件到手机
+2. 打开 MusicFree → **侧边栏** → **设置** → **插件设置**
+3. 选择**安装本地插件**，选择下载的 `.js` 文件
 
-**常见问题：** [MusicFree 使用 Q&A](https://musicfree.catcat.work/qa/common.html)
+#### 插件管理
 
-**交流渠道：**
-- 💬 技术交流 QQ 群：[683467814](https://jq.qq.com/?_wv=1027&k=upVpi2k3)（技术交流，非答疑群）
-- 📺 QQ 频道：[点击加入](https://pd.qq.com/s/cyxnf0jj1)
+- 🔄 **更新插件**: 插件设置 → 批量更新
+- ⚙️ **插件配置**: 支持用户变量，可配置个人音乐源
+- 🔀 **插件排序**: 可调整插件顺序，影响搜索结果排序
+- 🎛️ **插件开关**: 控制插件在搜索、榜单中的显示
 
-## 🚧 反馈 & 建议
+#### 相关链接
 
-欢迎通过以下方式提出需求或反馈问题：
-- 📮 公众号后台留言
-- 🐛 提交 [Issue](https://github.com/maotoumao/MusicFree/issues)
-- 💡 在 [Discussions](https://github.com/maotoumao/MusicFree/discussions) 开启话题
+- 📖 [插件使用教程](https://musicfree.catcat.work/usage/mobile/install-plugin.html)
+- 🔧 [插件开发文档](https://musicfree.catcat.work/plugin/introduction.html)
+- 📦 [示例插件仓库](https://github.com/maotoumao/MusicFreePlugins)
+
+---
+
+## 📦 下载安装
+
+### 下载地址
+
+| 平台 | 链接 | 说明 |
+|------|------|------|
+| 🐙 GitHub | [Releases](https://github.com/maotoumao/MusicFree/releases) | 国际用户推荐 |
+| 🦊 Gitee | [Releases](https://gitee.com/maotoumao/MusicFree/releases) | 国内用户推荐 |
+| 💬 公众号 | 回复 `MusicFree` | 获取下载链接 |
+
+### 系统要求
+
+- **Android**: Android 7.0 (API 24) 及以上
+- **Harmony OS**: 支持 Android 兼容模式的设备
+
+### 安装说明
+
+1. 下载对应架构的 APK 文件（推荐下载 `universal` 通用版）
+2. 允许安装未知来源应用
+3. 安装并打开 MusicFree
+4. [安装插件](#-插件系统)开始使用
+
+> [!TIP]
+> 如遇下载速度慢，建议使用 Gitee 或公众号获取下载链接
+
+---
+
+## 💬 交流社区
+
+### 常见问题
+
+遇到问题请先查看 [常见问题解答](https://musicfree.catcat.work/qa/common.html)
+
+### 交流渠道
+
+| 平台 | 链接 | 说明 |
+|------|------|------|
+| 💬 QQ 群 | [683467814](https://jq.qq.com/?_wv=1027&k=upVpi2k3) | 技术交流群（非答疑群）|
+| 📺 QQ 频道 | [点击加入](https://pd.qq.com/s/cyxnf0jj1) | 官方 QQ 频道 |
+| 📮 公众号 | 一只猫头猫 | 关注获取最新动态 |
+| 🐛 Issues | [GitHub Issues](https://github.com/maotoumao/MusicFree/issues) | Bug 反馈与功能建议 |
+| 💡 Discussions | [GitHub Discussions](https://github.com/maotoumao/MusicFree/discussions) | 功能讨论与交流 |
+
+<div align="center">
+
+### 关注公众号
+
+<img src="./src/assets/imgs/wechat_channel.jpg" width="200" alt="微信公众号">
+
+**「一只猫头猫」**
+
+获取最新更新 · 插件推荐 · 使用技巧
+
+</div>
+
+---
+
+## 🤝 参与贡献
+
+欢迎各种形式的贡献！
+
+### 反馈问题
+
+- 🐛 **Bug 反馈**: [提交 Issue](https://github.com/maotoumao/MusicFree/issues/new)
+- 💡 **功能建议**: [发起讨论](https://github.com/maotoumao/MusicFree/discussions/new)
+- 📮 **其他反馈**: 公众号后台留言
+
+### 贡献代码
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 提交 Pull Request
+
+### 开发插件
+
+- 📚 阅读 [插件开发文档](https://musicfree.catcat.work/plugin/introduction.html)
+- 🔧 参考 [示例插件](https://github.com/maotoumao/MusicFreePlugins)
+- 📤 提交到插件仓库供大家使用
+
+---
 
 ## 💖 支持项目
 
-如果你喜欢这个项目，欢迎通过以下方式支持：
+如果这个项目对你有帮助，欢迎通过以下方式支持：
 
-1. ⭐ Star 这个项目，分享给身边的朋友
-2. 📱 关注公众号「一只猫头猫」获取最新信息
-3. 📺 关注 B 站 [不想睡觉猫头猫](https://space.bilibili.com/12866223)
+- ⭐ **Star** 本项目，让更多人发现
+- 🔗 **分享** 给需要的朋友
+- 📱 **关注** 公众号「一只猫头猫」获取最新资讯
+- 📺 **关注** B 站 [@不想睡觉猫头猫](https://space.bilibili.com/12866223)
+- 🐛 **反馈** 问题和建议
+- 🔌 **开发** 插件丰富生态
 
-![微信公众号](./src/assets/imgs/wechat_channel.jpg)
+### 致谢
 
-### 📣 媒体推荐
+感谢所有贡献者和支持者！
 
-感谢以下媒体的推荐：
+特别感谢以下媒体的推荐：
+
 - [果核剥壳](https://mp.weixin.qq.com/s/F6hMbLv_a-Ty0fPA_0P0Rg)
 - [小棉袄](https://mp.weixin.qq.com/s/Fqe3o7vcTw0KDKoB-gsQfg)
 
+---
+
 ## 📝 更新日志
 
-详见 [ChangeLog](./changelog.md)
+查看 [更新日志](changelog.md) 了解版本更新详情。
+
+### 最新版本 v0.5.1 (2025.4.4)
+
+- 🔧 修复插件开关点击无效的问题
+- 🔧 修复开屏图片消失的问题
+- ✨ 增加新建歌单名称的长度限制
+- ✨ 优化插件安装失败的提示样式
+
+[查看完整更新日志](changelog.md)
 
 ---
-本项目仅供学习参考使用，基于 AGPL3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
 
 ## 📸 应用截图
 
-> **注意：** 以下截图仅为 UI 样例，软件内部不提供任何音源，不代表实际使用时表现如下图。
+> [!NOTE]
+> 以下截图仅为界面展示，软件本身不提供音源，实际内容取决于安装的插件。
 
-#### 主界面
+<div align="center">
 
-![主界面](./.imgs/main.jpg)
+### 主界面
 
-#### 侧边栏
+<img src="./.imgs/main.jpg" width="250" alt="主界面">
 
-- 基础设置
-  ![基础设置](./.imgs/basic-setting.jpg)
+### 播放界面
 
-- 主题设置
-  ![主题设置](./.imgs/theme-setting.jpg)
+<img src="./.imgs/song-cover.jpg" width="250" alt="播放页"> <img src="./.imgs/song-lrc.jpg" width="250" alt="歌词页">
 
-#### 音乐相关
+### 歌单与搜索
 
-- 歌单页
-  ![歌单页](./.imgs/song-sheet.jpg)
+<img src="./.imgs/song-sheet.jpg" width="250" alt="歌单页"> <img src="./.imgs/search-in-sheet.jpg" width="250" alt="歌单检索">
 
-- 歌单内检索
-  ![歌单内检索](./.imgs/search-in-sheet.jpg)
+### 设置界面
 
-- 播放页
-  ![播放页](./.imgs/song-cover.jpg)
+<img src="./.imgs/basic-setting.jpg" width="250" alt="基础设置"> <img src="./.imgs/theme-setting.jpg" width="250" alt="主题设置">
 
-- 歌词页
-  ![歌词页](./.imgs/song-lrc.jpg)
+### 详情页面
 
+<img src="./.imgs/artist-detail.jpg" width="250" alt="作者信息">
 
-#### 搜索相关
+</div>
 
-- 作者信息
-  ![专辑信息](./.imgs/artist-detail.jpg)
+---
+
+## 📄 许可证
+
+本项目基于 [AGPL-3.0](LICENSE) 许可证开源。
+
+```
+Copyright (C) 2024 猫头猫
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+```
+
+---
+
+<div align="center">
+
+**⚠️ 免责声明**
+
+本项目仅供学习交流使用，请勿用于商业用途。
+
+请在遵守当地法律法规的前提下使用本软件。
+
+使用本软件产生的任何问题由使用者自行承担，与开发者无关。
+
+---
+
+**Made with ❤️ by [猫头猫](https://github.com/maotoumao)**
+
+如果这个项目对你有帮助，请给一个 ⭐️ Star 支持一下！
+
+</div>
