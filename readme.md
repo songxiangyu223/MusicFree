@@ -114,6 +114,171 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 - **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
 - **公众号：** 回复「MusicFree」获取下载链接
 
+## 🛠️ 开发者指南
+
+如果你希望参与 MusicFree 的开发或基于此项目进行二次开发，可以参考以下指南。
+
+### 环境准备
+
+开发 MusicFree 需要准备以下环境：
+
+**基础要求：**
+- Node.js >= 18
+- Git
+
+**Android 开发：**
+- JDK（支持 Android 构建）
+- Android SDK 和 NDK
+- Android Studio（推荐）
+
+**iOS 开发：**
+- macOS 系统
+- Xcode
+- CocoaPods
+
+**推荐工具：**
+- VS Code / WebStorm
+- Android Studio
+- React Native Debugger
+
+### 快速开始
+
+#### 1. 克隆仓库
+
+```bash
+git clone https://github.com/maotoumao/MusicFree.git
+cd MusicFree
+```
+
+#### 2. 安装依赖
+
+```bash
+npm install
+# 或者使用 yarn
+yarn install
+```
+
+iOS 还需要安装 Pod 依赖：
+
+```bash
+cd ios && pod install && cd ..
+```
+
+#### 3. 连接设备或模拟器
+
+**Android：**
+- 连接真机并开启 USB 调试
+- 或启动 Android 模拟器
+- 使用木木模拟器可运行：`npm run connect-mumu`
+
+**iOS：**
+- 启动 iOS 模拟器
+- 或连接真机并配置开发证书
+
+#### 4. 启动开发服务器
+
+```bash
+npm run start
+```
+
+#### 5. 运行应用
+
+在新的终端窗口中运行：
+
+```bash
+# Android
+npm run android
+
+# iOS
+npm run ios
+```
+
+### 常用命令
+
+| 命令 | 说明 |
+|------|------|
+| `npm run start` | 启动 Metro 开发服务器 |
+| `npm run android` | 启动 Android 应用 |
+| `npm run ios` | 启动 iOS 应用 |
+| `npm run lint` | 运行 ESLint 代码检查并自动修复 |
+| `npm run build-android` | 构建 Android 发布包（APK） |
+| `npm run generate-assets` | 生成静态资源 |
+| `npm run connect-mumu` | 连接木木模拟器 (localhost:7555) |
+| `npm run clean` | 清理 Android 构建缓存 |
+| `npm test` | 运行测试 |
+
+### 项目结构
+
+```
+MusicFree/
+├── src/
+│   ├── components/      # 通用 UI 组件库
+│   ├── pages/          # 应用页面组件
+│   ├── core/           # 核心业务逻辑
+│   │   ├── trackPlayer/    # 音频播放器
+│   │   ├── musicSheet/     # 歌单管理
+│   │   ├── pluginManager/  # 插件管理系统
+│   │   ├── config.ts       # 配置管理
+│   │   └── theme.ts        # 主题系统
+│   ├── types/          # TypeScript 类型定义
+│   ├── utils/          # 工具函数库
+│   ├── constants/      # 常量和配置
+│   ├── hooks/          # 自定义 React Hooks
+│   └── service/        # 服务接口
+├── android/            # Android 原生代码和配置
+├── ios/                # iOS 原生代码和配置
+├── generator/          # 资源生成脚本
+└── release/            # 发布相关配置
+```
+
+### 开发注意事项
+
+- **代码规范：** 提交代码前会通过 Husky + Lint Staged 自动运行 ESLint 检查，请确保代码符合规范
+- **最低版本：** 自 v0.5.0 起，Android 最低支持版本为 7.0
+- **插件化架构：** 所有音源功能通过插件实现，主程序不包含任何音源
+- **插件开发：** 插件需遵循 CommonJS 模块规范，详见 [插件开发文档](https://musicfree.catcat.work/plugin/introduction.html)
+- **开源协议：** 本项目基于 AGPL 3.0 协议，二次开发需遵守协议要求
+
+### 技术栈
+
+**核心框架：**
+- React Native 0.76.5
+- React 18.3.1
+- TypeScript 5.3.3
+
+**状态管理与存储：**
+- Jotai 2.9.1 - 状态管理
+- React Native MMKV 2.12.2 - 高性能本地存储
+- AsyncStorage 1.23.1 - 异步存储
+
+**路由与导航：**
+- React Navigation 6.x - 导航框架
+- React Native Gesture Handler - 手势处理
+
+**音频播放：**
+- React Native Track Player 4.1.1 - 音频播放核心
+
+**网络请求：**
+- Axios 1.7.4 - HTTP 客户端
+
+**UI 组件库：**
+- @shopify/flash-list 1.7.1 - 高性能列表
+- React Native SVG 15.8.0 - SVG 支持
+- React Native Linear Gradient - 渐变效果
+- React Native Reanimated 3.16.6 - 动画库
+
+**工具库：**
+- dayjs - 日期处理
+- cheerio - HTML 解析
+- crypto-js - 加密工具
+- nanoid - ID 生成
+
+**构建工具：**
+- Metro - JavaScript 打包
+- Babel - 代码转译
+- Gradle - Android 构建
+- Expo 52.0.0 - 部分模块支持
+
 ## ❓ Q&A
 
 **常见问题：** [MusicFree 使用 Q&A](https://musicfree.catcat.work/qa/common.html)
