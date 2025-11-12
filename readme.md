@@ -16,11 +16,11 @@
 一个插件化、定制化、无广告的免费音乐播放器。
 
 **支持平台：**
-- 📱 Android 
+- 📱 Android 7.0 及以上
 - 🎨 Harmony OS
 - 💻 桌面版：[MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 
-**当前版本：** v0.5.1
+**当前版本：** v0.5.1 (2025.4.4)
 
 如果需要了解后续进展可以关注公众号↓；如果有问题可以在 issue 区或者公众号直接留言反馈。
 
@@ -37,7 +37,7 @@
 
 
 ## 项目使用约定：
-本项目基于 AGPL 3.0 协议开源，使用此项目时请遵守开源协议。  
+本项目基于 AGPL-3.0 协议开源，使用此项目时请遵守开源协议。  
 除此外，希望你在使用代码时已经了解以下额外说明：
 
 1. 打包、二次分发 **请保留代码出处**：https://github.com/maotoumao/MusicFree
@@ -48,6 +48,26 @@
 > 👎 小米/华为/vivo等<ins>应用市场的 MusicFree </ins>和本软件无关，**是套用本软件名称和 Logo 的广告软件**。
 >
 > 👎 速悦音乐基于本软件二次开发，改动点仅仅是内置插件、修改一些 UI 以及引流，**并未遵守本项目的开源协议，且拒绝沟通**。
+
+---
+
+## 🛠️ 技术栈
+
+本项目基于以下核心技术构建：
+
+- **框架**：React Native 0.76.5 + TypeScript
+- **状态管理**：Jotai
+- **本地存储**：MMKV
+- **音频播放**：react-native-track-player
+- **网络请求**：Axios
+- **路由导航**：React Navigation
+- **列表渲染**：@shopify/flash-list
+
+**开发环境要求**：
+- Node.js >= 18
+- JDK（Android 构建）
+- Android SDK & NDK
+- CocoaPods（iOS 构建）
 
 ---
 
@@ -67,7 +87,7 @@
 ### 🎨 定制化 & 无广告
 - 支持浅色/深色模式
 - 支持自定义背景
-- 基于 AGPL 协议开源，永久免费
+- 基于 AGPL-3.0 协议开源，永久免费
 - 无任何广告
 
 ### 🔒 隐私保护
@@ -99,10 +119,10 @@
 
 **快速安装：**
 
-从网络安装插件，输入以下地址：
-```
-https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
-```
+从网络安装插件，可输入以下地址之一：
+
+- **GitHub（推荐）**：`https://github.com/maotoumao/MusicFreePlugins/raw/master/plugins.json`
+- **Gitee（国内镜像）**：`https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json`
 
 **详细教程：**
 - 📖 图文教程：[MusicFree 插件使用指南](https://mp.weixin.qq.com/s?__biz=MzkxOTM5MDI4MA==&mid=2247483875&idx=1&sn=aedf8bb909540634d927de7fd2b4b8b1&chksm=c1a390c4f6d419d233908bb781d418c6b9fd2ca82e9e93291e7c93b8ead3c50ca5ae39668212#rd)
@@ -110,9 +130,33 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 
 ## 📦 下载地址
 
-- **GitHub Releases:** [https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
-- **Gitee Releases:** [https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
-- **公众号：** 回复「MusicFree」获取下载链接
+- **GitHub Releases**（推荐）：[https://github.com/maotoumao/MusicFree/releases](https://github.com/maotoumao/MusicFree/releases)
+- **Gitee Releases**（国内镜像）：[https://gitee.com/maotoumao/MusicFree/releases](https://gitee.com/maotoumao/MusicFree/releases)
+- **飞书云文档**：[查看下载说明](https://r0rvr854dd1.feishu.cn/drive/folder/KLqKfWOA3lx8MKdo8xNcYpR8n7t)
+- **公众号**：回复「MusicFree」获取下载链接
+
+> **注意**：应用市场（小米/华为/vivo 等）的"MusicFree"与本项目无关，为套用名称和 Logo 的广告软件，请勿下载。
+
+## ⚠️ 版本升级说明
+
+### v0.5.0 及以上版本重要变更
+
+- **系统要求变更**：仅支持 Android 7.0 及以上系统（升级了 React Native 到 0.76.5）
+- **如果你的设备运行 Android 7.0 以下系统，请勿升级到 v0.5.0 及以上版本**
+
+### v0.4.0 版本重要变更
+
+- **歌单存储机制变更**：修改了歌单的存储方式，升级前建议备份数据
+- **不建议从 v0.4.0+ 回退到低版本**，可能导致歌单数据丢失
+
+### v0.3.0 版本重要变更
+
+- **存储方式优化**：歌单会自动转化为新的存储方式
+- **回退风险**：从 v0.3.0 回退到老版本会导致歌单清空
+
+### v0.1.0-alpha.1 版本重要变更
+
+- **插件协议升级**：旧版插件完全不兼容，需卸载后重新安装
 
 ## ❓ Q&A
 
@@ -150,7 +194,7 @@ https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json
 详见 [ChangeLog](./changelog.md)
 
 ---
-本项目仅供学习参考使用，基于 AGPL3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
+本项目仅供学习参考使用，基于 AGPL-3.0 协议开源；请在符合法律法规的情况下合理使用本项目，禁止用于商业目的使用。
 
 ## 📸 应用截图
 
